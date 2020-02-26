@@ -16,7 +16,7 @@ import com.bw.service.CommodityService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-/*
+/*ÑîÑ©·É
  * zg1¸Ä±ä
  * */
 @Controller
