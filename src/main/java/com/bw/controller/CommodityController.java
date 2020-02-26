@@ -16,7 +16,9 @@ import com.bw.service.CommodityService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-
+/*
+ * 123456
+ * */
 @Controller
 public class CommodityController {
 	
