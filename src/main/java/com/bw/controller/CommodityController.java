@@ -17,7 +17,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 /*
- * 123456
+ * zg1¸Ä±ä
  * */
 @Controller
 public class CommodityController {
