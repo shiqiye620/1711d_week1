@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.bw.dao.CommodityDao">
+  	<select id="list" resultType="commodity">
+  		select * from commodity c left join `goods_ brand` b on c.b_id=b.b_id left join goods_type t 
+		on c.t_id=t.t_id
+		<where>
+		<if test="t_name!=null and ''!=t_name">
+			and t.t_name=#{t_name}
+		</if>
+		
+		<if test="b_name!=null and ''!=b_name">
+			and b.b_name=#{b_name}
+		</if>
+		
+		<if test="p1!=null and ''!=p1">
+			and c.s_price>=#{p1}
+		</if>
+		
+		<if test="p2!=null and ''!=p2">
+			and c.s_price&lt;=#{p2}
+		</if>
+		<if test="s_name1!=null and ''!=s_name1">
+			and c.s_name1 like concat('%',#{s_name1},'%')
+		</if>
+		</where>
+  	</select>
+  	
+  	<select id="getBList" resultType="brand">
+  		select * from `goods_ brand`
+  	</select>
+  	
+  	<select id="getTList" resultType="type">
+  		select * from goods_type
+  	</select>
+  	
+  	<insert id="add">
+  		insert into commodity values(null,#{s_name1},#{s_name2},#{s_size},#{s_price},#{s_num},#{s_label},#{s_photo},#{t_id},#{b_id})
+  	</insert>
+  </mapper>
+  
